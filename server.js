@@ -26,7 +26,8 @@ app.set("view engine", "handlebars");
 
 // MONGO
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/newscraperDB");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newscraperDB";
+mongoose.connect(MONGODB_URI);
 
 // ROUTES
 app.post("/signin", function(req, res) {
