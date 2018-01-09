@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <table class="bordered responsive-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <h2 style="font-weight: 100;">VICE.com Front Page</h2>
+                            <hr>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <tr>
+                            {{#each data}}
+                            <td style="font-weight: bold;" class="col s2"><a class="clickToComment" href="/articles_dash/comments/{{this._id}}" data-id={{this._id}}>{{this.title}}</td>
+                            {{/each}}
+                            <br>
+                        </tr>
+                        <tr>
+                            {{#each data}}
+                            <td class="col s2">{{this.summary}}</td>
+                            {{/each}}
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

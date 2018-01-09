@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Newscraper</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/newscraper.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row">
+            <div class="col s12">
+                <h1 style="font-weight: 100; text-align: center;">CREATE ACCOUNT</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3"></div>
+            <form class="col s6" action="/signin" method="post">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="First Name" name="firstName" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Last Name" name="lastName" type="text" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Password" name="password" type="password" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Email" name="email" type="email" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button>SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+            <div class="col s3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
