@@ -8,7 +8,7 @@ var path = require("path");
 var exphbs = require("express-handlebars");
 var helpers = require('handlebars-helpers')();
 
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 var User = require("./models/user.js");
 var Article = require("./models/article.js");
 var Comment = require("./models/comment.js");
