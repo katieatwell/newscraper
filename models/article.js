@@ -6,6 +6,7 @@ var ArticleSchema = new Schema({
         required: "There must be a title to add to DB"
     },
     summary: String,
+    link: String,
     comment: {
         type: Schema.Types.ObjectId,
         ref: "Comment"

@@ -26,8 +26,7 @@ app.set("view engine", "handlebars");
 
 // MONGO
 mongoose.Promise = Promise;
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newscraperDB";
-mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://localhost/newscraperDB");
 
 // ROUTES
 app.post("/signin", function(req, res) {
@@ -48,13 +47,16 @@ app.get("/articles_json", function(req, res) {
     request("https://www.vice.com/en_us", function(error, response, html) {
         var $ = cheerio.load(html);
         var results = {};
-        $("div.grid__wrapper__card__text").each(function(i, element) {
+        $("a.grid__wrapper__card").each(function(i, element) {
             var title = $(element).find(".grid__wrapper__card__text__title").text();
             var summary = $(element).find(".grid__wrapper__card__text__summary").text();
-            console.log("Summary line 51: " + summary);
+            var link = $(element).attr("href");
+            // var image = $(element).attr("src");
+            // console.log("this is the image: " + image);
             results = {
                 title: title,
-                summary: summary
+                summary: summary,
+                link: link
             };
             // console.log("Results line 54: " + results);
             Article
@@ -73,7 +75,7 @@ app.get("/articles_json", function(req, res) {
 app.get("/articles_dash", function(req, res) {
     Article.find({})
         .then(function(data) {
-            var articles = data.slice(0, 8);
+            var articles = data.slice(0, 6);
             // console.log("data.title " + data.Article.title)
             var hbsObject = { data: articles };
             console.log("This is the handlesbars Object: " + "%0", hbsObject);

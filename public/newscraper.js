@@ -11,6 +11,7 @@ $(document).on("click", ".submitComment", function() {
         })
         .done(function(data) {
             console.log(data);
+            // location.reload();
             // $("#notes").empty();
         });
     $("#bodyinput").val("");

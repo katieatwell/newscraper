@@ -23,6 +23,13 @@
                             <td class="col s2">{{this.summary}}</td>
                             {{/each}}
                         </tr>
+                        <tr>
+                            {{#each data}}
+                            <td class="col s2 truncate">
+                                {{this.link}}
+                            </td>
+                            {{/each}}
+                        </tr>
                     </tr>
                 </tbody>
             </table>
