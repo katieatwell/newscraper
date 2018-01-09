@@ -2,15 +2,22 @@
     <div class="row"></div>
     <div class="row"></div>
     <div class="row">
+
         <div class="col s4">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title"><h5 style="font-weight: 100;">Most recent comment about this article:</h4></span>
-                    <p><i>"{{data.comment.body}}"</i></p>
+            <div class="row">
+                <div class="card grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title"><h5 style="font-weight: 100;">Most recent comment about this article:</h4></span>
+                        <p><i>"{{data.comment.body}}"</i></p>
+                    </div>
                 </div>
             </div>
+            <div class="row">
+                <a href="/articles_dash" style="align: right;" class="btn backToDash grey">Back to More Vice News Articles: </a>
+            </div>
         </div>
-        <div style="border-style: solid; border-width: 2px; border-color: blue-grey" class="col s8">
+        <div class="col s1"></div>
+        <div style="border-style: solid; border-width: 2px; border-color: blue-grey" class="col s7">
             <h4 style="font-weight: 100;">Add a comment about... <br><br><i>"{{data.title}}":</i></h4>
             <br>
             <br>
